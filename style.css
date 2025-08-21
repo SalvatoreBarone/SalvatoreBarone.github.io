@@ -310,13 +310,13 @@ svg {
 
 /* TEACHING PAGE */
 
-#Publications {
+#publications {
     height: 100%;
     background-color: var(--primary-color);
     color: var(--text-color);
 }
 
-.PublicationsDiv {
+.publicationsDiv {
     width: 80%;
     padding: 40px;
     margin: auto;
@@ -455,6 +455,10 @@ svg {
 
 .researchItem * {
     margin-top: 5px;
+}
+
+.researchItem p {
+    text-align: justify;
 }
 
 /* RESEARCH NEWS PAGE */

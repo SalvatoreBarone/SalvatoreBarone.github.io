@@ -198,6 +198,32 @@
                     <div>
                         <h2>Approximate Computing</h2>
                         <!-- <p>This is a description of the current research.</p> -->
+
+                        <br>
+                        <h3>Designing Energy-Efficient Approximate Circuits for the FPGA Technology</h3>
+                        <p>
+                            A significant number of contributions focusing on approximation techniques for Application Specific Integrated Circuits (ASIC) has become part of the scientific literature. Conversely, Field Programmable Gate Arrays (FPGAs) are often overlooked, despite their increasing spread. ASIC-based techniques are, however, often unsuitable when it comes to FPGA, providing little or no advantages at all, due to the inherent differences in the two target technologies.
+                            <br>
+                            Most of the FPGA-based approximation techniques being recently proposed either rely on manual approximation, or are too tightly coupled with a particular FPGA fabric, making them ineffective or even inapplicable to other devices. Furthermore, they rely on machine-learning based predictors to drive the Design Space Exploration (DSE), that, given the high fidelity required, are usually burdensome to achieve, or even unfeasible when little or no training data is available.
+                            <br>
+                            Our research in this field aims at a fabric- and workload-independent approach to designing power-optimized approximate circuits for FPGA. We are exploiting the existing bond between Look-Up Table (LUT)-mapping in FPGA synthesis and cut-enumeration in And-Inverter graph representation of digital circuits, while resorting to an analytical model to estimate the power consumption during the DSE. This allows avoiding both costly synthesis and machine-learning-based predictors for hardware resource requirement estimation during the DSE.
+                        </p>
+                        <br>
+                        <h3>Functional Approximation of Decision Tree Based Multiple Classifier Systems</h3>
+                        <p>
+                            Multiple Classifier Systems (MCSs) have been increasingly designed to take advantage of hardware features, such as high parallelism and computational power, to guarantee higher throughput and lower latency.<br>
+                            Although the combination of multiple classifiers leads to high classification accuracy, the required area overhead makes the design of a hardware accelerator unfeasible, hindering the adoption of commercial configurable devices.<br>
+                            For this reason, in this paper, we exploit the Approximate Computing (AxC) design paradigm to automatically generate approximated hardware implementations of MCSs by trading hardware area overhead off for classification accuracy. In particular, we propose an algorithm that identifies the resiliency source of the model and uses it to introduce approximation with minimum accuracy loss. In order to prove the effectiveness of our solution, we performed numerous experiments on models of various sizes trained on different datasets. The results show that with negligible accuracy loss it is possible to significantly reduce the hardware requirements of a classifier.<br>
+                        </p>
+                        <br>
+                        <h3>Exploiting CNNs Error Resilience to Improve Inferences Performance</h3>
+                        <p>
+                            The ever-increasing proliferation of artificial intelligence (AI) applications, and the need for high-speed, low-power accelerators, pose serious challenges to hardware designers. Recently, the resilience of AI applications, especially convolutional neural networks (CNNs), to errors has been successfully exploited to relax functional requirements using the Approximate Computing (AxC) design paradigm, trading off computational accuracy for performance gains.
+                            The contribution of each single computational component to error resilience, as well as the computational patterns, has been considered only at a coarse granularity, e.g., by looking at network layers. This can be detrimental, especially for CNNs, as the information necessary for inference may be concentrated in certain regions rather than being spread over the entire feature map.<br>
+                            To overcome this limitation, we are working an efficient method to identify structural components, such as filters, fibers, or even single neurons that perform sensitive computations. The CNN is profiled to identify possible correlations and to group components with behavioral similarities; the groups are then characterized and ranked in terms of error sensitivity. This allows us to introduce much finer grain approximations than the state of the art, improving the power savings by a further 20\%.  
+                            Furthermore, with minor modifications, the method can be made error-source independent, i.e., it is applicable regardless of whether the error is due to AxC, sophisticated adversarial threats, or even computational system failures. This paves the way for more sophisticated adversarial robustness analysis and improved design of fault-tolerant applications.
+                        </p>
+
                         <!-- <div class="buttons">
                             <form action="http://www.ece.ualberta.ca/~jhan8/publications/ApproCompReview_final.pdf" target="_blank">
                                 <input type="submit" value="Tutorial">
@@ -214,6 +240,41 @@
                 <div class="researchItem">
                     <div>
                         <h2>Reliability and fault tolerance</h2>
+                        <br>
+                        <h3>Reliability analysis of hardware accelerators for decision tree-based classifier systems</h3>
+                        <p>
+                            The increasing adoption of AI models has driven applications toward the use of hardware accelerators to meet high computational demands and strict performance requirements. Among the various AI models, Decision Tree Ensembles (DTEs) are particularly notable for their high accuracy and explainability. Moreover, they are particularly well-suited for hardware implementations, enabling high performance and improved energy efficiency. 
+                            <br>
+                            One frequently overlooked aspect of DTEs is their reliability in the presence of hardware malfunctions. Indeed, while DTEs are generally regarded as robust by design, due to their redundancy and voting mechanisms, hardware faults can still have catastrophic consequences. 
+                        </p>
+                        <br>
+                        <h3>Optimizing Resiliency Assessment for Deep Neural Networks</h3>
+                        <p>
+                            Deep Neural Networks (DNNs) and especially Convolutional Neural Networks (CNNs) are increasingly deployed in safety-critical domains, where rigorous reliability assessment is essential. Fault Injection (FI) remains a widely adopted technique to evaluate DNN robustness under hardware faults. However, the high computational cost of FI campaigns limits their scalability and practical adoption. These campaigns traditionally rely on three components: the DNN model, a fault list, and an input stimulus set. While fault selection strategies have been extensively studied, the impact of input stimulus selection remains largely underexplored.
+                            <br>
+                            Input stimuli in activating critical faults during FI-based reliability evaluation plays a cruciar role, but it has been overlooked b the scientific community. We are currently investigating a strategy to prioritize inputs that are more likely to expose fault-induced vulnerabilities, guided by uncertainty-based metrics. Our methodology is validated across two fault models: memory-level bit flips and stuck-at faults in a systolic array accelerator. Results show that uncertainty-ranked inputs significantly increase fault activation and detection efficiency, enabling more focused and cost-effective reliability analysis.
+                        </p>
+                        <!-- <p>This is a description of the current research.</p> -->
+                        <!-- <div class="buttons">
+                            <form action="http://www.ece.ualberta.ca/~jhan8/publications/ApproCompReview_final.pdf" target="_blank">
+                                <input type="submit" value="Tutorial">
+                            </form>
+                            <form action="http://www.ece.ualberta.ca/~jhan8/publications/Approximate%20Computing%20-%20ETS%20Tutorial%202013%202PerPage.pdf" target="_blank">
+                                <input type="submit" value="Presentation">
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="researchItem">
+                    <div>
+                        <h2>Artificial Intelligence</h2>
+                        <!-- <br>
+                        <h3>Ineffectiveness of Digital Transformations for Detecting Adversarial Attacks a</h3>
+                        <p>
+                        </p> -->
                         <!-- <p>This is a description of the current research.</p> -->
                         <!-- <div class="buttons">
                             <form action="http://www.ece.ualberta.ca/~jhan8/publications/ApproCompReview_final.pdf" target="_blank">
