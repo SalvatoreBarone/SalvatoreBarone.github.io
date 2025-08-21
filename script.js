@@ -2,21 +2,14 @@ const aboutNav = document.getElementById("aboutNav")
 const teachingNav = document.getElementById("teachingNav")
 const researchNav = document.getElementById("researchNav")
 const serviceNav = document.getElementById("serviceNav")
-const awardNav = document.getElementById("AwardsNav")
-const publicationNav = document.getElementById("publicationNav")
+const publicationsNav = document.getElementById("publicationsNav")
+
 
 const aboutSection = document.getElementById("about")
 const researchSection = document.getElementById("Research")
-const publicationsSection = document.getElementById("Publications")
 const teachingSection = document.getElementById("Teaching")
+const publicationsSection = document.getElementById("publications")
 const serviceSection = document.getElementById("ProfessionalService")
-const awardSection = document.getElementById("HonorsAndAwards")
-
-const toggleButton = document.getElementsByClassName('toggle-button')[0]
-const navigationLinks = document.getElementsByClassName("navigation")[0]
-
-const toggleDarkMode = document.getElementById("moon");
-const toggleLightMode = document.getElementById("sun");
 
 let isOpen = false
 
@@ -50,36 +43,9 @@ serviceNav.addEventListener('click', () => {
     }
 })
 
-awardNav.addEventListener("click", () => {
-    awardSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-publicationNav.addEventListener("click", () => {
+publicationsNav.addEventListener("click", () => {
     publicationsSection.scrollIntoView({behavior: 'smooth'})
     if (isOpen) {
         isOpen = navigationLinks.classList.toggle('active')
     }
-})
-
-// toggle hamburger menu
-
-toggleButton.addEventListener('click', () => {
-    isOpen = navigationLinks.classList.toggle('active') 
-})
-
-// toggle dark/light mode
-
-toggleDarkMode.addEventListener('click', () => {
-    document.body.classList.toggle("darkTheme");
-    toggleDarkMode.style.display = 'none';
-    toggleLightMode.style.display = 'grid';
-})
-
-toggleLightMode.addEventListener('click', () => {
-    document.body.classList.toggle("darkTheme");
-    toggleDarkMode.style.display = 'grid';
-    toggleLightMode.style.display = 'none';
 })
