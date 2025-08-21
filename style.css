@@ -1,0 +1,950 @@
+/* Document settings */
+
+*{
+    scroll-margin-top: 40px;
+    margin: 0;
+    line-height: 30px;
+}
+
+:root {
+    --primary-color: white;
+    --secondary-color: lightgray;
+    --text-color: black;
+    --text-color2: rgb(0, 200, 255);
+    --text-color3: white;
+}
+
+.darkTheme {
+    --primary-color: #002035;;
+    --secondary-color: rgb(33, 59, 83);
+    --text-color: lightblue;
+    --text-color2: white;
+    --text-color3: rgb(33, 59, 83);
+}
+
+/* UNIVERSAL FONTS AND STYLES */
+
+
+h1 {
+    font-family: sans-serif;
+    font-size: 35px;
+    white-space: nowrap;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: large;
+}
+
+form input{
+    background-color: transparent;
+    border: solid 2px var(--text-color2);
+    font-weight: bold;
+    color: var(--text-color2);
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+form input:hover {
+    cursor: pointer;
+    background-color: var(--text-color2);
+}
+
+input:not(:hover) {
+    transition: all 0.4s;
+    transform: scale(1);
+}
+
+/* HEADER */
+
+header {
+    top:0;
+    z-index: 3;
+    background-color: rgba(255, 255, 255);
+    border-bottom: 1px solid;
+    border-color: lightgray;
+    width: 100%;
+    position: fixed;
+    min-height: 50px;  
+}
+
+#moon{
+    padding: 0px 20px;
+    display: grid;
+    fill: blue;
+}
+
+#moon:hover path {
+    fill: rgb(80, 80, 255);
+}
+
+#moon:hover {
+    cursor: pointer;
+}
+
+#sun {
+    padding: 0px 20px;
+    display: none;    
+}
+
+#sun:hover path {
+    cursor: pointer;
+    fill: rgb(80, 80, 255)
+}
+
+#sun:hover {
+    cursor: pointer;
+}
+
+#titleName {
+    display: flex;
+    align-items: center;
+    float: left;
+    margin-left: 40px;
+    min-height: 50px;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a{
+    display: flex;
+    align-items: center;
+    float: right;
+    min-height: 50px;
+    margin: 0;
+}
+
+.navigation a li:hover{
+    color: rgb(80, 80, 255);
+}
+
+.navigation a li{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: gray;
+    display: table;
+    padding: 0px 50px;
+    cursor: pointer;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .9rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.toggle-button .bar {
+    height: 4px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+/* ABOUT PAGE */
+
+#profilePic {
+    border-radius: 50%;
+    width: 100%;
+    /* border: gray 1px solid; */
+}   
+
+#about {
+    margin-top: 50px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.aboutDiv {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    gap: 50px;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contactInfo {
+    display: flex;
+    justify-content: center;
+}
+
+#profileInfo li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#profileInfo a {
+    text-decoration: none;
+    color: rgb(70, 70, 202);
+}
+
+svg {
+    margin-top: 2px;
+}
+
+#profileInfo a:hover {
+    transition: all 0.4s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#profileInfo a:not(:hover) {
+    transition: all 0.4s;
+    transform: scale(1);
+}
+
+
+
+#profileInfo { 
+    display: inline;
+    text-align: center;
+    padding: 20px;
+}
+
+.aboutDescription p {
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.aboutDescription label {
+    display: block;
+    font-weight: bold;
+    color: rgb(70, 70, 202);
+}
+
+.aboutDescription label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.aboutDescription input {
+    display: none;
+}
+
+.aboutDescription .dropDown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 500ms;
+}
+
+.aboutDescription .dropDown p {
+    overflow: hidden;
+}
+
+.aboutDescription .dropDown > div {
+    overflow: hidden;
+}
+
+#close {
+    display: none;
+    width: fit-content;
+}
+
+#open {
+    display: block;
+    width: fit-content;
+}
+
+.aboutDescription input:checked ~ #open {
+    display: none;
+}
+.aboutDescription input:checked ~ #close {
+    display: block;
+}
+
+.aboutDescription input:checked ~ .dropDown {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    transition: all 500ms;
+}
+
+.about2 {
+    margin-top: 1.5rem;
+    display: flex;
+}
+
+.infoList {
+    margin-top: 10px;
+}
+
+.list {
+    font-family: sans-serif;
+    font-size: large;
+    list-style-position: outside;
+    margin-left: -1em;
+}
+
+.list .school {
+    color: rgb(70, 70, 202);
+}
+
+.education {
+    margin-left: 3rem;
+}
+
+/* TEACHING PAGE */
+
+#Publications {
+    height: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.PublicationsDiv {
+    width: 80%;
+    padding: 40px;
+    margin: auto;
+}
+
+/* TEACHING PAGE */
+
+#Teaching {
+    height: 100%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.teachingDiv {
+    width: 80%;
+    padding: 40px;
+    margin: auto;
+}
+
+.teachingItemDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    grid-auto-rows: 1fr;
+    justify-self: center;
+}
+
+
+
+.teachingDiv h1 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.teachingItem {
+    margin-left: 10px;
+    color: var(--text-color);
+    box-sizing: border-box;
+    /* background-image: url(https://cdn.vectorstock.com/i/preview-1x/22/63/mathematics-circular-flat-vector-20232263.jpg);
+    background-size: cover; */
+    background-color: rgba(71, 133, 154, 0.5);
+    padding: 20px;
+}
+
+.teachingItem p {
+    color: var(--text-color);
+}
+
+.linkDiv span {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+.teachingItem .description {
+    display: inline;
+    text-align: justify;
+    margin: 0;
+}
+
+.teachingItem div {
+    display: flex;
+
+}
+
+.teachingItem:hover {
+    transition:all 0.4s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.teachingItem:not(:hover) {
+    transition:all 0.4s;
+    transform: scale(1);
+}
+
+.teachingItem p {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+
+/* CURRENT RESEARCH PAGE */
+
+#Research {
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.researchDiv {
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+}
+
+.currentResearchItems {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    white-space: nowrap;
+}
+.Itemsection a{
+    color: rgb(70, 70, 202);
+}
+
+.researchDiv h1 {
+    color: var(--text-color);
+    width: 20%;
+    margin-bottom: 40px;
+}
+
+.researchList li {
+    color: var(--text-color);
+    list-style-type: none;
+    padding: 20px;
+}
+
+.researchList li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.researchItem {
+    color:black;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    /* border: 1px solid white; */
+}
+
+.researchItem form input:hover {
+    color: var(--text-color3);
+}
+
+.researchItem * {
+    margin-top: 5px;
+}
+
+/* RESEARCH NEWS PAGE */
+
+.researchNewsDiv {
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+    margin-top: -40px;
+}
+
+.researchNewsDiv li {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.researchNewsDiv li a {
+    color: var(--text-color);
+    font-size: large;
+    width: fit-content;
+}
+
+.researchNewsDiv li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.researchNewsDiv h1 {
+    color: var(--text-color);
+    width: 20%;
+    margin-bottom: 50px;
+}
+/* 
+.researchNewsList {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+} */
+
+.researchNewsItem {
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    margin-bottom: 10px;
+    /* border: 1px solid gray; */
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+}
+
+.researchNewsItem img {
+    max-width: 250px;
+}
+
+.researchNewsItem:hover {
+    transition: 0.4s;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.researchNewsItem:not(:hover) {
+    transition: 0.4s;
+    transform: scale(1);
+}
+
+.researchNewsItem div{
+    /* background-color: rgba(60, 159, 240, 0.5); */
+    padding: 20px;
+}
+
+.researchNewsItem h2 {
+    color: var(--text-color);
+}
+
+.researchNewsItem button:hover {
+    color: #002035;
+}
+
+.researchNewsItem span {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* Professional Service */
+
+#ProfessionalService {
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.ProfessionalServiceDiv {
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+    color: rgb(33, 59, 83);
+}
+
+.ProfessionalServiceDiv .profTitle {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.ProfessionalServiceDiv a {
+    color: blue;
+}
+
+.ServiceItem {
+    display: grid;
+    grid-template-columns: 95% 5%;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.ServiceItem label {
+    display: block;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 20px;
+    z-index: 1;
+}
+
+.arrow {
+    font-size: x-large;
+    font-weight: bolder;
+    transition: all 200ms ease-in-out;
+    padding: 20px;
+}
+
+.ServiceItem label:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.ServiceItem input {
+    display: none;
+}
+
+.ServiceItem .dropDown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 500ms;
+    padding: 0px 20px 20px 20px;
+    margin-top: -20px;
+    z-index: 0;
+}
+
+.ServiceItem .dropDown p {
+    overflow: hidden;
+}
+
+.ServiceItem input:checked ~ .dropDown {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    transition: all 500ms;
+    z-index: 2;
+}
+
+.ServiceItem input:checked ~ .arrow {
+    transform: rotate(90deg);
+}
+
+/* Honors and Awards */
+
+#HonorsAndAwards {
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.HonorsAndAwardsDiv {
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+}
+
+.HonorsAndAwardsDiv h1 {
+    color: var(--text-color);
+}
+
+.awardItem {
+    display: flex;
+    gap: 15px;
+    color: var(--text-color);
+    margin-top: 20px;
+    /* border: 1px solid white; */
+    /* padding: 20px; */
+}
+
+.awardItem img {
+    max-height: 20rem;
+}
+
+.awardItem p {
+    display: inline;
+    font-weight: bold;
+}
+
+/* Students */
+
+#students {
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.studentsDiv {
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+    color: var(--text-color);
+}
+
+.studentsDiv span {
+    color: #FF0000;
+}
+
+.studentItem {
+    border: 1px solid var(--text-color);
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#bottom {
+    color: gray;
+    text-align: center;
+    padding: 40px;
+    margin-top: -50px;
+}
+
+/* SCALINGS */
+
+/* minimzing window/screen size */
+
+@media (max-width: 1300px) {
+    .teachingItemDiv {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 50% 50%;
+    }
+
+    .researchItem .buttons {
+        display: inline-block;
+    }
+
+    .currentResearchItems {
+        display: block;
+    }
+
+    .navigation a li {
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navigation a li {
+        padding: 0px 30px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .navigation a li {
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    /* NAVIAGTION */
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .toggle-button:hover *{
+        background-color: blue;
+    }
+
+    .navigation a {
+        width: 100%;
+        min-height: 100px;
+    }
+
+    .navigation {
+        opacity: 0;
+        width: 100%;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 0px;
+        transition: height 200ms ease-in-out;
+    }
+
+    .navigation a li {
+        padding: 10px;
+    }
+
+    .navigation.active {
+        opacity: 1;
+        height: 700px;
+        transition: height 200ms ease-in-out;
+    }
+    
+    #titleName {
+        margin-left: 0;
+        float: none;
+        justify-content: center;
+        min-height: 50px;  
+    }
+
+    /* MAIN DIVS */
+
+    .researchDiv {
+        display: grid;
+        gap: 20px;
+    }
+
+    .researchNewsList {
+        grid-template-columns: 100%;
+    }    
+
+    .teachingItemDiv {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .aboutDiv {
+        display: grid;
+    }
+
+    .currentResearchItems {
+        display: block;
+    }
+}
+
+/* maximizing windown/screen size */
+
+@media (min-width: 1600px) { 
+
+    .aboutDiv {
+        width: 90%;
+    }
+
+    .teachingDiv {
+        width: 70%;
+    }
+
+    .researchDiv {
+        width: 70%;
+    }
+
+    .researchNewsDiv {
+        width: 70%;
+    }
+
+    .ProfessionalServiceDiv {
+        width: 70%;
+    }
+
+    .HonorsAndAwardsDiv {
+        width: 70%;
+    }
+
+    .studentsDiv {
+        width: 70%;
+    }
+}
+
+@media (min-width: 2000px) { 
+
+    .aboutDiv {
+        width: 80%;
+    }
+
+    .teachingDiv {
+        width: 60%;
+    }
+
+    .researchDiv {
+        width: 60%;
+    }
+
+    .researchNewsDiv {
+        width: 60%;
+    }
+
+    .ProfessionalServiceDiv {
+        width: 60%;
+    }
+
+    .HonorsAndAwardsDiv {
+        width: 60%;
+    }
+
+    .studentsDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 3000px) { 
+    
+    .aboutDiv {
+        width: 70%;
+    }
+
+    .teachingDiv {
+        width: 50%;
+    }
+
+    .researchDiv {
+        width: 50%;
+    }
+
+    .researchNewsDiv {
+        width: 50%;
+    }
+
+    .ProfessionalServiceDiv {
+        width: 50%;
+    }
+
+    .HonorsAndAwardsDiv {
+        width: 50%;
+    }
+
+    .studentsDiv {
+        width: 50%;
+    }
+}
+
+@media (min-width: 4000px) { 
+
+    .aboutDiv {
+        width: 35%;
+    }
+
+    .teachingDiv {
+        width: 35%;
+    }
+
+    .researchDiv {
+        width: 35%;
+    }
+
+    .researchNewsDiv {
+        width: 35%;
+    }
+
+    .ProfessionalServiceDiv {
+        width: 35%;
+    }
+
+    .HonorsAndAwardsDiv {
+        width: 35%;
+    }
+
+    .studentsDiv {
+        width: 35%;
+    }
+}
+
+@media (min-width: 5000px) { 
+
+    .aboutDiv {
+        width: 25%;
+    }
+
+    .teachingDiv {
+        width: 25%;
+    }
+
+    .researchDiv {
+        width: 25%;
+    }
+
+    .researchNewsDiv {
+        width: 25%;
+    }
+
+    .ProfessionalServiceDiv {
+        width: 25%;
+    }
+
+    .HonorsAndAwardsDiv {
+        width: 25%;
+    }
+
+    .studentsDiv {
+        width: 25%;
+    }
+}
