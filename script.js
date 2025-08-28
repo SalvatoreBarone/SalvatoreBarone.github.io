@@ -3,12 +3,14 @@ const teachingNav = document.getElementById("teachingNav")
 const researchNav = document.getElementById("researchNav")
 const serviceNav = document.getElementById("serviceNav")
 const publicationsNav = document.getElementById("publicationsNav")
+const projectsNav = document.getElementById("projectsNav")
 
 
 const aboutSection = document.getElementById("about")
 const researchSection = document.getElementById("Research")
 const teachingSection = document.getElementById("Teaching")
 const publicationsSection = document.getElementById("publications")
+const projectSection = document.getElementById("Projects")
 const serviceSection = document.getElementById("ProfessionalService")
 
 let isOpen = false
@@ -45,6 +47,13 @@ serviceNav.addEventListener('click', () => {
 
 publicationsNav.addEventListener("click", () => {
     publicationsSection.scrollIntoView({behavior: 'smooth'})
+    if (isOpen) {
+        isOpen = navigationLinks.classList.toggle('active')
+    }
+})
+
+projectsNav.addEventListener("click", () => {
+    projectSection.scrollIntoView({behavior: 'smooth'})
     if (isOpen) {
         isOpen = navigationLinks.classList.toggle('active')
     }

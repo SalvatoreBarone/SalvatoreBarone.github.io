@@ -545,12 +545,77 @@ svg {
     z-index: 1;
 }
 
+/* Projects */
+#Projects {
+    height: 100%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.projectsDiv {
+    width: 70%;
+    padding: 40px;
+    margin: auto;
+}
+
+.projectItemDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 5px;
+    grid-auto-rows: 1fr;
+    justify-self: center;
+}
+
+.projectDiv h1 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.projectItem {
+    margin-left: 10px;
+    color: var(--text-color);
+    box-sizing: border-box;
+    background-color: rgba(71, 133, 154, 0.5);
+    padding: 20px;
+}
+
+.projectItem p {
+    color: var(--text-color);
+}
+
+.projectItem .description {
+    display: inline;
+    text-align: justify;
+    margin: 0;
+}
+
+.projectItem div {
+    display: flex;
+
+}
+
+.projectItem:hover {
+    transition:all 0.4s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.projectItem:not(:hover) {
+    transition:all 0.4s;
+    transform: scale(1);
+}
+
+.projectItem p {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
 
 /* Professional Service */
 
 #ProfessionalService {
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .ProfessionalServiceDiv {
