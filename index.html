@@ -135,7 +135,9 @@
                             <br>
                             He served as a General Chair for <a href="https://axc2025.ecaslab.org/">the 10th Workshop on Approximate Computing</a>, <a href="https://www.axc2024.ecaslab.org/">the 9th Workshop on Approximate Computing</a>.
                             <br>
-                            He has been part of the tecnical program committee of several internationa conferences, including 
+                            He is and has been part of the tecnical program committee of several internationa conferences, including 
+                            <a href="">Design, Automation and Test in Europe (DATE-2027)</a>, 
+                            <a href="">31th Asia and South Pacific Design Automation Conference (ASP-DAC 2027)</a>,
                             <a href="">Design, Automation and Test in Europe (DATE-2026)</a>, 
                             <a href="">31th Asia and South Pacific Design Automation Conference (ASP-DAC 2026)</a>, 
                             <a href="">16th IEEE Latin American Symposium on Circuits and Systems (LASCAS2025)</a>, 
@@ -152,11 +154,14 @@
                     <div class="interests">
                         <h2>Interests</h2>
                         <ul class="infoList">
+                            <li class="list">Bio.inspired computational paradigm, including Spiking Neural Networks and neuromorphic hardware</li>
+                            <li class="list">FPGA-based design of neuromorphic systems</li>
                             <li class="list">Approximate computing</li>
                             <li class="list">Artificial Intelligence</li>
                             <li class="list">Reliability and fault tolerance</li>
                             <li class="list">Emerging paradigms for circuit and system design</li>
                             <li class="list">Embedded systems and safety critical systems</li>
+                            <li class="list">Safety critical systems for the railway domain</li>
                             
                         </ul>
                     </div>
@@ -195,7 +200,25 @@
             <h1>Current Research</h1>
             <div class="researchList">
                
+                <div class="researchItem">
+                    <div>
+
                         
+                        <h2>FPGA-Based Neuromorphic Computing and  Spiking Neural Networks</h2>
+                        <br>    
+                        <p> My research focuses on the <strong>design, development, and optimization of energy-efficient neuromorphic computing architectures</strong> based on <strong>Spiking Neural Networks (SNNs)</strong>, with particular emphasis on their hardware implementation using <strong>Field-Programmable Gate Arrays (FPGAs)</strong>. The overarching goal is to develop scalable, high-performance neuromorphic accelerators capable of efficiently supporting both inference and learning, while achieving an appropriate balance between computational accuracy, hardware resource utilization, processing latency, and energy consumption. </p>
+                        <p> A major research direction concerns the investigation and hardware implementation of biologically inspired spiking neuron models, including <strong>Integrate-and-Fire (IF), Leaky Integrate-and-Fire (LIF), Izhikevich, and Hodgkin–Huxley models</strong>. This involves studying their mathematical formulations, discretization techniques, numerical representations, and architectural optimizations to enable efficient digital implementations. Particular attention is devoted to <strong>fixed-point arithmetic, approximate computing techniques, resource sharing, and parallel processing architectures</strong>. </p>
+
+                        <p> Another important aspect of my research addresses <strong>information encoding and decoding in SNNs</strong>, investigating techniques such as rate coding, temporal coding, and population coding, alongside the development of dedicated, modular, and parameterizable hardware components. </p>
+
+                        <p> My research also investigates <strong>learning mechanisms for SNNs</strong>, including biologically plausible approaches such as <strong>Spike-Timing-Dependent Plasticity (STDP)</strong>, as well as supervised learning techniques based on <strong>surrogate gradients</strong>. A central objective is to translate these algorithms into hardware-efficient implementations that support <strong>online and on-chip learning</strong>, enabling neural networks to dynamically adapt their synaptic weights directly on FPGA devices. </p>
+
+                        <p> Methodologically, my work combines mathematical modeling, high-level software simulation, <strong>Hardware Description Language (HDL) design</strong>, functional verification, FPGA synthesis, and experimental performance evaluation. The resulting architectures are systematically assessed in terms of numerical accuracy, scalability, throughput, latency, power consumption, and hardware resource requirements. </p>
+
+                        <p> Ultimately, my research aims to <strong>advance the state of the art in FPGA-based neuromorphic computing</strong> by developing modular, configurable, and reusable hardware building blocks for scalable Spiking Neural Networks, contributing to the realization of efficient and adaptive computing systems. </p>
+
+                    </div>
+                </div>        
                             
                 <div class="researchItem">
                     <div>
@@ -324,6 +347,21 @@
                     <div>
                         <a class="linkDiv" href="" target="_blank"><span></span></a>
                         <div class="description">
+                            <h2 class="subject">Electronic Computer Architectures (ING-INF/05)</h2>
+                            <p>
+                                <i>Bachelor's degree in computer science<br>
+                                Pegaso University (2026 - Present)</i><br>
+                                <br>
+                                The course provides the methodological tools for the analysis and synthesis of elementary machines for information processing (combinatorial and sequential logic networks). Designing fundamental elementary machines. Presenting the fundamentals of von Neumann-type electronic computer architecture, the repertoire of operating codes, and programming in assembly language.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teachingItem">
+                    <div>
+                        <a class="linkDiv" href="" target="_blank"><span></span></a>
+                        <div class="description">
                             <h2 class="subject">Prompt engineering and LLM (ING-INF/05)</h2>
                             <p>
                                 <i>Bachelor's degree in Computer Science<br>
@@ -360,7 +398,7 @@
                             <h2 class="subject">Cybersecurity (ING-INF/05)</h2>
                             <p>
                                 <i>Master's degree program in Safety Engineering<br>
-                                Pegaso University (2025 - Present)</i><br>
+                                Pegaso University (2024 - 2016)</i><br>
                                 <br>
                                 The aim of the course is to develop the technical, theoretical, and practical skills necessary to understand and effectively manage security in information and communications technology.
                             </p>
@@ -402,6 +440,36 @@
             <h1>Projects</h1>
 
             <div class="projectItemDiv">
+
+                
+                
+                <div class="projectItem">
+                    <div>
+                        <a class="linkDiv" href="https://github.com/SalvatoreBarone/Matisse-Hw" target="_blank"><span></span></a>
+                        <div class="description">
+                            <h2 class="subject">Matisse-Hw</h2>
+                            <p>
+                                This repo is still under construction, so expect changes frequently!
+                                
+                                This is a VHDL-2008 component library to implement Spiking Neural Networks on FPGA. It provides fully-customizable endcoder, decoder and neuron implementation, intended to be synthesized on FPGA. Feel free to play with it!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projectItem">
+                    <div>
+                        <a class="linkDiv" href="https://github.com/SalvatoreBarone/Matisse-Sw" target="_blank"><span></span></a>
+                        <div class="description">
+                            <h2 class="subject">Matisse-Sw</h2>
+                            <p>
+                                The software brother of Matisse-Hw, this repo provides a software implementation of Spiking Neural Networks. It is intended to be used for simulation and testing purposes, and it is designed to be easily portable to different platforms. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="projectItem">
                     <div>
                         <a class="linkDiv" href="https://github.com/SalvatoreBarone/pyALS-RF" target="_blank"><span></span></a>
@@ -693,7 +761,7 @@
             </div> 
         </div> -->
         <div id="bottom">
-            <p>Salvatore Barone 2025</p>
+            <p>Salvatore Barone. Last updated: October 2026</p>
         </div>
     </section>
 
