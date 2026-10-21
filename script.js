@@ -1,60 +1,47 @@
-const aboutNav = document.getElementById("aboutNav")
-const teachingNav = document.getElementById("teachingNav")
-const researchNav = document.getElementById("researchNav")
-const serviceNav = document.getElementById("serviceNav")
-const publicationsNav = document.getElementById("publicationsNav")
-const projectsNav = document.getElementById("projectsNav")
+// Navigation for the single-page academic website.
+const navigationLinks = document.querySelector('.navigation');
+const menuToggle = document.querySelector('.toggle-button');
 
+const destinations = {
+    aboutNav: 'about',
+    researchNav: 'Research',
+    teachingNav: 'Teaching',
+    publicationsNav: 'publications',
+    projectsNav: 'Projects',
+    serviceNav: 'ProfessionalService'
+};
 
-const aboutSection = document.getElementById("about")
-const researchSection = document.getElementById("Research")
-const teachingSection = document.getElementById("Teaching")
-const publicationsSection = document.getElementById("publications")
-const projectSection = document.getElementById("Projects")
-const serviceSection = document.getElementById("ProfessionalService")
+function closeMobileMenu() {
+    if (navigationLinks) navigationLinks.classList.remove('active');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+}
 
-let isOpen = false
+if (menuToggle && navigationLinks) {
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-label', 'Toggle navigation menu');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    const toggle = () => {
+        const expanded = navigationLinks.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', String(expanded));
+    };
+    menuToggle.addEventListener('click', toggle);
+    menuToggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle();
+        }
+    });
+}
 
-// scroll the section
-
-aboutNav.addEventListener("click", () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-teachingNav.addEventListener("click", () => {
-    teachingSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-researchNav.addEventListener("click", () => {
-    researchSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-serviceNav.addEventListener('click', () => {
-    serviceSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-publicationsNav.addEventListener("click", () => {
-    publicationsSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
-
-projectsNav.addEventListener("click", () => {
-    projectSection.scrollIntoView({behavior: 'smooth'})
-    if (isOpen) {
-        isOpen = navigationLinks.classList.toggle('active')
-    }
-})
+Object.entries(destinations).forEach(([navId, sectionId]) => {
+    const link = document.getElementById(navId);
+    const section = document.getElementById(sectionId);
+    if (!link || !section) return;
+    link.addEventListener('click', () => {
+        section.scrollIntoView({ behavior: 'smooth' });
+        closeMobileMenu();
+    });
+});
+// Current Research items and the Teaching/Projects sections use native HTML
+// <details>/<summary>, so they require no JavaScript to expand or collapse.

@@ -341,7 +341,7 @@ svg {
 
 .teachingItemDiv {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-row-gap: 10px;
     grid-auto-rows: 1fr;
     justify-self: center;
@@ -406,53 +406,51 @@ svg {
 
 
 
-/* Whole Teaching section disclosure */
-.teachingDisclosure > summary {
+/* Entire Teaching and Projects sections: consistent, native disclosure behavior */
+.teachingDisclosure > summary,
+.projectsDisclosure > summary {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
-    cursor: pointer;
-    list-style: none;
     padding: 8px 12px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    list-style: none;
 }
 
-.teachingDisclosure > summary::-webkit-details-marker {
-    display: none;
-}
+.teachingDisclosure > summary::-webkit-details-marker,
+.projectsDisclosure > summary::-webkit-details-marker,
+.researchDisclosure > summary::-webkit-details-marker { display: none; }
 
-.teachingDisclosure > summary h1 {
-    margin: 0;
-    color: var(--text-color);
-}
+.teachingDisclosure > summary h1,
+.projectsDisclosure > summary h1 { margin: 0; color: var(--text-color); }
 
-.teachingDisclosure > summary::after {
+.teachingDisclosure > summary::after,
+.projectsDisclosure > summary::after {
     content: ">";
     font-family: sans-serif;
     font-size: x-large;
     font-weight: bolder;
+    flex-shrink: 0;
     transition: transform 200ms ease-in-out;
 }
 
-.teachingDisclosure[open] > summary::after {
-    transform: rotate(90deg);
-}
+.teachingDisclosure[open] > summary::after,
+.projectsDisclosure[open] > summary::after { transform: rotate(90deg); }
 
 .teachingDisclosure > summary:hover,
-.teachingDisclosure > summary:focus-visible {
-    color: blue;
-}
+.projectsDisclosure > summary:hover { color: blue; }
 
-.teachingDisclosure > summary:focus-visible {
+.teachingDisclosure > summary:focus-visible,
+.projectsDisclosure > summary:focus-visible {
     outline: 2px solid blue;
     outline-offset: 2px;
 }
 
-.teachingDisclosure > .teachingItemDiv {
-    margin-top: 16px;
-}
+.teachingDisclosure > .teachingItemDiv,
+.projectsDisclosure > .projectItemDiv { margin-top: 16px; }
 
 /* CURRENT RESEARCH PAGE */
 
@@ -667,15 +665,15 @@ svg {
 }
 
 .projectsDiv {
-    width: 70%;
+    width: 80%;
     padding: 40px;
     margin: auto;
 }
 
 .projectItemDiv {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 5px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-row-gap: 10px;
     grid-auto-rows: 1fr;
     justify-self: center;
 }
@@ -876,10 +874,11 @@ svg {
 /* minimzing window/screen size */
 
 @media (max-width: 1300px) {
-    .teachingItemDiv {
+    .teachingItemDiv,
+    .projectItemDiv {
         display: grid;
-        gap: 50px;
-        grid-template-columns: 50% 50%;
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .researchItem .buttons {
@@ -961,9 +960,10 @@ svg {
         grid-template-columns: 100%;
     }    
 
-    .teachingItemDiv {
+    .teachingItemDiv,
+    .projectItemDiv {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .aboutDiv {
@@ -983,7 +983,9 @@ svg {
         width: 90%;
     }
 
-    .teachingDiv {
+    .teachingDiv,
+    .projectsDiv,
+    .publicationsDiv {
         width: 70%;
     }
 
@@ -1014,7 +1016,9 @@ svg {
         width: 80%;
     }
 
-    .teachingDiv {
+    .teachingDiv,
+    .projectsDiv,
+    .publicationsDiv {
         width: 60%;
     }
 
@@ -1045,7 +1049,9 @@ svg {
         width: 70%;
     }
 
-    .teachingDiv {
+    .teachingDiv,
+    .projectsDiv,
+    .publicationsDiv {
         width: 50%;
     }
 
@@ -1076,7 +1082,9 @@ svg {
         width: 35%;
     }
 
-    .teachingDiv {
+    .teachingDiv,
+    .projectsDiv,
+    .publicationsDiv {
         width: 35%;
     }
 
@@ -1107,7 +1115,9 @@ svg {
         width: 25%;
     }
 
-    .teachingDiv {
+    .teachingDiv,
+    .projectsDiv,
+    .publicationsDiv {
         width: 25%;
     }
 
@@ -1130,4 +1140,12 @@ svg {
     .studentsDiv {
         width: 25%;
     }
+}
+/* Shared sizing; preserves Teaching width and responsive breakpoints above. */
+.teachingDiv, .projectsDiv, .publicationsDiv { min-width: 0; }
+.teachingDisclosure, .projectsDisclosure { min-width: 0; }
+.teachingItem, .projectItem { min-width: 0; }
+@media (max-width: 700px) {
+    .teachingDiv, .projectsDiv, .publicationsDiv { box-sizing: border-box; width: 100%; padding: 24px 16px; }
+    .teachingDisclosure > summary h1, .projectsDisclosure > summary h1 { white-space: normal; }
 }
