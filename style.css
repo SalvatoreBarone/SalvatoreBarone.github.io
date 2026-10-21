@@ -1149,3 +1149,37 @@ svg {
     .teachingDiv, .projectsDiv, .publicationsDiv { box-sizing: border-box; width: 100%; padding: 24px 16px; }
     .teachingDisclosure > summary h1, .projectsDisclosure > summary h1 { white-space: normal; }
 }
+
+
+.downlodablePDF {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: rgba(71, 133, 154, 0.15);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.downlodablePDF a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.downlodablePDF .pdfIcon {
+    height: 50px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.downlodablePDF .presentationTitle {
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.downlodablePDF:hover {
+    background-color: rgba(71, 133, 154, 0.3);
+    cursor: pointer;
+}
