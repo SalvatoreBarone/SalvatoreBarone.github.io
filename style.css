@@ -230,6 +230,9 @@ svg {
 .aboutDescription p {
     margin-top: 1rem;
     overflow: hidden;
+    padding: 40px;
+    width: 80%;
+    text-align: justify;
 }
 
 .aboutDescription label {
@@ -402,6 +405,55 @@ svg {
 }
 
 
+
+/* Whole Teaching section disclosure */
+.teachingDisclosure > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.teachingDisclosure > summary::-webkit-details-marker {
+    display: none;
+}
+
+.teachingDisclosure > summary h1 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.teachingDisclosure > summary::after {
+    content: ">";
+    font-family: sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    transition: transform 200ms ease-in-out;
+}
+
+.teachingDisclosure[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+.teachingDisclosure > summary:hover,
+.teachingDisclosure > summary:focus-visible {
+    color: blue;
+}
+
+.teachingDisclosure > summary:focus-visible {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+}
+
+.teachingDisclosure > .teachingItemDiv {
+    margin-top: 16px;
+}
+
 /* CURRENT RESEARCH PAGE */
 
 #Research {
@@ -459,6 +511,68 @@ svg {
 
 .researchItem p {
     text-align: justify;
+}
+
+/* Collapsible Current Research items: same visual language as Professional Service */
+.researchItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    color: rgb(33, 59, 83);
+    overflow: hidden;
+}
+
+.researchItem .researchDisclosure > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.researchItem .researchDisclosure > summary::-webkit-details-marker {
+    display: none;
+}
+
+.researchItem .researchDisclosure > summary h2 {
+    margin: 0;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.researchItem .researchDisclosure > summary::after {
+    content: ">";
+    font-family: sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    transition: transform 200ms ease-in-out;
+}
+
+.researchItem .researchDisclosure[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+.researchItem .researchDisclosure > summary:hover,
+.researchItem .researchDisclosure > summary:focus-visible {
+    color: blue;
+}
+
+.researchItem .researchDisclosure > summary:focus-visible {
+    outline: 2px solid blue;
+    outline-offset: -2px;
+}
+
+.researchItem .researchContent {
+    padding: 0 20px 20px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.researchItem .researchContent:empty {
+    display: none;
 }
 
 /* RESEARCH NEWS PAGE */
